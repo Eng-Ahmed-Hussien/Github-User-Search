@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github User Search</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/Css/style.css" />
+  </head>
+  <body>
+    <form class="user-form" id="form">
+      <input type="text" id="searchUser" placeholder="Search a GitHub User" />
+    </form>
+
+    <ul class="user-list" id="userList"></ul>
+
+    <div class="card-container" id="cardContainer">
+      <div class="card">
+        <img src="" alt="" id="avatarLarge" />
+
+        <div class="user-info-large" id="userInfoLarge">
+          <div class="user-item--name">
+            <h3></h3>
+          </div>
+          <ul>
+            <li>
+              <span id="followersCount"></span> <strong> Followers</strong>
+            </li>
+            <li>
+              <span id="followingCount"></span> <strong> Following</strong>
+            </li>
+            <li><span id="reposCount"></span> <strong> Repos</strong></li>
+          </ul>
+          <div id="reposLarge"></div>
+        </div>
+      </div>
+      <span class="close-btn" onclick="closeCard()">X</span>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"
+      integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/Js/script.js"></script>
+  </body>
+</html>
