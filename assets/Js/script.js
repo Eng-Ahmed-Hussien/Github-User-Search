@@ -45,8 +45,8 @@ function createUserItem(user) {
           </div>
         </div>
         <ul class="user-item-btns">
-          <a href="${user.html_url}" target="_blank" class="btn">GitHub <i class="fa-brands fa-github"></i></a>
-          <a href="#" onclick="showProfile('${user.login}')" class="btn">Overview <i class="fa-solid fa-eye"></i></a>
+          <button onclick="window.open('${user.html_url}', '_blank')" class="btn">GitHub <i class="fa-brands fa-github"></i></button>
+          <button onclick="showProfile('${user.login}')" class="btn">Overview <i class="fa-solid fa-eye"></i></button>
         </ul>
     `;
 
