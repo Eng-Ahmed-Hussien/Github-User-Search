@@ -22,7 +22,7 @@ const axiosConfig = {
 async function getUsers(username) {
     try {
         const { data } = await axios.get(APIURL + username, axiosConfig);
-        const users = data.items.slice(0, 25); // Limit to first 25 users
+        const users = data.items.slice(0, 30); // Limit to first 25 users
 
         if (users.length === 0) {
             createErrorItem("No profiles found");
@@ -115,7 +115,7 @@ async function getRepos(username) {
         const reposLarge = document.getElementById("reposLarge");
         reposLarge.innerHTML = ""; // Clear previous repos
 
-        data.slice(0, 20).forEach((repo) => {
+        data.slice(0, 40).forEach((repo) => {
             const repoItem = document.createElement("a");
             repoItem.classList.add("repo");
             repoItem.href = repo.html_url;
