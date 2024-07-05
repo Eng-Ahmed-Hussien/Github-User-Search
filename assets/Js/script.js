@@ -22,7 +22,7 @@ const axiosConfig = {
 async function getUsers(username) {
     try {
         const { data } = await axios.get(APIURL + username, axiosConfig);
-        const users = data.items.slice(0, 30); // Limit to first 25 users
+        const users = data.items.slice(0, 25); // Limit to first 25 users
 
         if (users.length === 0) {
             createErrorItem("No profiles found");
