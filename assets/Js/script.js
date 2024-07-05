@@ -11,7 +11,7 @@ const followingCount = document.getElementById("followingCount");
 const reposCount = document.getElementById("reposCount");
 const reposLarge = document.getElementById("reposLarge");
 
-const GITHUB_TOKEN = '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';
+const GITHUB_TOKEN = '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';
 
 const axiosConfig = {
     headers: {
