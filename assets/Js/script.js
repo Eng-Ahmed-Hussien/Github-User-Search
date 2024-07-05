@@ -11,18 +11,10 @@ const followingCount = document.getElementById("followingCount");
 const reposCount = document.getElementById("reposCount");
 const reposLarge = document.getElementById("reposLarge");
 
-const GITHUB_TOKEN = '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';
-
-const axiosConfig = {
-    headers: {
-        Authorization: `token ${GITHUB_TOKEN}`
-    }
-};
-
 async function getUsers(username) {
     try {
-        const { data } = await axios.get(APIURL + username, axiosConfig);
-        const users = data.items.slice(0, 25); // Limit to first 25 users
+        const { data } = await axios.get(APIURL + username);
+        const users = data.items.slice(0, 25); // Limit to first 10 users
 
         if (users.length === 0) {
             createErrorItem("No profiles found");
@@ -74,7 +66,7 @@ function createErrorItem(msg) {
 
 async function showProfile(username) {
     try {
-        const { data } = await axios.get(`https://api.github.com/users/${username}`, axiosConfig);
+        const { data } = await axios.get(`https://api.github.com/users/${username}`);
 
         const userID = data.name || data.login;
         const userBio = data.bio ? data.bio : "";
@@ -111,7 +103,7 @@ async function showProfile(username) {
 
 async function getRepos(username) {
     try {
-        const { data } = await axios.get(`https://api.github.com/users/${username}/repos?sort=created`, axiosConfig);
+        const { data } = await axios.get(`https://api.github.com/users/${username}/repos?sort=created`);
         const reposLarge = document.getElementById("reposLarge");
         reposLarge.innerHTML = ""; // Clear previous repos
 
@@ -122,7 +114,13 @@ async function getRepos(username) {
             repoItem.target = "_blank";
             repoItem.innerText = repo.name;
             reposLarge.appendChild(repoItem);
+            
+            // Log repo names to console
+            // console.log(repo.name);
         });
+
+        // Check the HTML structure in the console
+        // console.log(reposLarge.innerHTML);
 
     } catch (err) {
         console.error("Error fetching repos", err);
@@ -131,6 +129,7 @@ async function getRepos(username) {
 
 function closeCard() {
     cardContainer.style.display = "none";
+
 }
 
 form.addEventListener("submit", (e) => {
@@ -141,10 +140,9 @@ form.addEventListener("submit", (e) => {
     if (searchTerm) {
         getUsers(searchTerm);
         search.value = "";
-        closeCard();
+          closeCard();
     }
 });
-
 // Event listener to close card when clicking outside
 window.addEventListener("click", (e) => {
     if (e.target !== cardContainer) {
