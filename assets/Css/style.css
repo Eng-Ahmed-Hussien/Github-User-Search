@@ -331,7 +331,7 @@ ul {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        height: 200px;
+        max-height: 200px;
         overflow-X: auto;
         overflow-y: hidden;
     }
