@@ -45,8 +45,8 @@ function createUserItem(user) {
           </div>
         </div>
         <ul class="user-item-btns">
-          <button onclick="window.open('${user.html_url}', '_blank')" class="btn">GitHub <i class="fa-brands fa-github"></i></button>
-          <button onclick="showProfile('${user.login}')" class="btn">Overview <i class="fa-solid fa-eye"></i></button>
+          <a href="${user.html_url}" target="_blank" class="btn">GitHub <i class="fa-brands fa-github"></i></a>
+          <a href="#" onclick="showProfile('${user.login}')" class="btn">Overview <i class="fa-solid fa-eye"></i></a>
         </ul>
     `;
 
@@ -107,7 +107,7 @@ async function getRepos(username) {
         const reposLarge = document.getElementById("reposLarge");
         reposLarge.innerHTML = ""; // Clear previous repos
 
-        data.slice(0, 5).forEach((repo) => {
+        data.slice(0, 20).forEach((repo) => {
             const repoItem = document.createElement("a");
             repoItem.classList.add("repo");
             repoItem.href = repo.html_url;

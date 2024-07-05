@@ -79,12 +79,13 @@ ul {
 }
 
 .card {
-    max-width: 400px;
+    max-width: 500px;
     background-color: #310a707e;
     border-radius: 1.3rem;
     box-shadow: 0 5px 3px rgba(233, 236, 247, 0.363),
         0 5px 5px rgba(241, 241, 241, 0.171);
     display: flex;
+    flex-wrap: wrap;
     padding: 1rem .6rem;
     margin: 1rem;
 }
@@ -140,6 +141,28 @@ ul {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 1rem;
+    overflow-X: auto;
+    overflow-y: hidden;
+
+}
+
+#reposLarge::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+#reposLarge::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#reposLarge::-webkit-scrollbar-thumb {
+    background: #212a72;
+    border-radius: 10px;
+}
+
+#reposLarge::-webkit-scrollbar-thumb:hover {
+    background: #1329eb;
 }
 
 #reposLarge .repo {
@@ -308,6 +331,14 @@ ul {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
+        height: 200px;
+        overflow-X: auto;
+        overflow-y: hidden;
+    }
+
+    #reposLarge::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
     }
 
     #reposLarge .repo {
