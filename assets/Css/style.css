@@ -314,6 +314,7 @@ ul {
         width: 100%;
         font-size: 0.8rem;
         padding: 0.25rem 0.4rem;
+        text-align: center !important;
 
     }
 
@@ -331,7 +332,6 @@ ul {
     }
 
     .user-info-large {
-        background-color: red;
         margin: 0;
     }
 
